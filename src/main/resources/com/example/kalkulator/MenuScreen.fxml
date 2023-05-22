@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulator.MenuController">
    <children>
       <VBox layoutX="200.0" layoutY="170.0" prefHeight="264.0" prefWidth="100.0" spacing="55.0">
@@ -16,7 +15,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#openConverter" prefHeight="50.0" prefWidth="100.0" style="-fx-background-radius: 5;" text="Konwerter">
+            <Button mnemonicParsing="false" onAction="#openConverter" prefHeight="50.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-background-color: #C1DAD6; -fx-border-color: Gray; -fx-border-radius: 5;" text="Konwerter">
                <font>
                   <Font size="14.0" />
                </font>

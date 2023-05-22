@@ -11,8 +11,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulator.ConvertController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulator.ConvertController">
    <children>
       <Button layoutX="417.0" layoutY="546.0" mnemonicParsing="false" onAction="#exitConverter" style="-fx-background-color: #FF7E82;" text="Wyjście" />
       <TabPane prefHeight="530.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
@@ -31,7 +32,7 @@
                           </rowConstraints>
                            <children>
                               <ChoiceBox fx:id="length1id" prefWidth="150.0" />
-                              <TextField fx:id="text" alignment="CENTER" prefHeight="40.0" prefWidth="201.0" style="-fx-border-color: Gray; -fx-border-radius: 3;" GridPane.columnIndex="1" />
+                              <TextField fx:id="text" alignment="CENTER" onAction="#convert" prefHeight="40.0" prefWidth="201.0" style="-fx-border-color: Gray; -fx-border-radius: 3;" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                         <GridPane layoutX="50.0" layoutY="243.0" prefHeight="41.0" prefWidth="400.0">
@@ -47,7 +48,11 @@
                               <Label fx:id="lengthResult" alignment="CENTER" prefHeight="45.0" prefWidth="201.0" style="-fx-border-color: Gray; -fx-background-color: White; -fx-border-radius: 3;" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
-                        <Button layoutX="224.0" layoutY="359.0" mnemonicParsing="false" onAction="#convert" text="Konwertuj" />
+                        <Button layoutX="206.0" layoutY="360.0" mnemonicParsing="false" onAction="#convert" style="-fx-background-color: #99C68E;" text="Konwertuj">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
             </content>

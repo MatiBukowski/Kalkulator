@@ -43,6 +43,23 @@ public class MenuController {
     }
 
     @FXML
+    public void openPasswordCreator() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/example/kalkulator/PasswordCreatorScreen.fxml"));
+        Pane pane = null;
+        try{
+            pane = loader.load();
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+
+        PasswordCreatorController passwordCreatorController = loader.getController();
+        passwordCreatorController.setMainController(mainController);
+
+        mainController.setMainStackPane(pane);
+    }
+
+    @FXML
     public void exit() {
         System.exit(0);
     }

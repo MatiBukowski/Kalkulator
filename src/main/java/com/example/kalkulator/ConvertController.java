@@ -3,6 +3,7 @@ package com.example.kalkulator;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -45,34 +46,33 @@ public class ConvertController {
 
     @FXML
     public void convertLength() {
-        double value = Double.valueOf(text.getText());
+        try {
+            double value = Double.valueOf(text.getText());
 
-        if(length1id.getValue().equals("metry") && length2id.getValue().equals("mile")) {
-            value = value*0.000621371192;
-            lengthResult.setText(String.valueOf(value));
+            if (length1id.getValue().equals("metry") && length2id.getValue().equals("mile")) {
+                value = value * 0.000621371192;
+                lengthResult.setText(String.valueOf(value));
+            } else if (length1id.getValue().equals("metry") && length2id.getValue().equals("cale")) {
+                value = value * 39.3700787;
+                lengthResult.setText(String.valueOf(value));
+            } else if (length1id.getValue().equals("mile") && length2id.getValue().equals("metry")) {
+                value = value * 1609.344;
+                lengthResult.setText(String.valueOf(value));
+            } else if (length1id.getValue().equals("mile") && length2id.getValue().equals("cale")) {
+                value = value * 63360;
+                lengthResult.setText(String.valueOf(value));
+            } else if (length1id.getValue().equals("cale") && length2id.getValue().equals("metry")) {
+                value = value * 0.0254;
+                lengthResult.setText(String.valueOf(value));
+            } else if (length1id.getValue().equals("cale") && length2id.getValue().equals("mile")) {
+                value = value * 0.000015782828;
+                lengthResult.setText(String.valueOf(value));
+            } else
+                lengthResult.setText(String.valueOf(value));
         }
-        else if(length1id.getValue().equals("metry") && length2id.getValue().equals("cale")) {
-            value = value*39.3700787;
-            lengthResult.setText(String.valueOf(value));
+        catch (NumberFormatException exception){
+            lengthResult.setText("Błąd - wprowadź liczbę");
         }
-        else if(length1id.getValue().equals("mile") && length2id.getValue().equals("metry")) {
-            value = value*1609.344;
-            lengthResult.setText(String.valueOf(value));
-        }
-        else if(length1id.getValue().equals("mile") && length2id.getValue().equals("cale")) {
-            value = value*63360 ;
-            lengthResult.setText(String.valueOf(value));
-        }
-        else if(length1id.getValue().equals("cale") && length2id.getValue().equals("metry")) {
-            value = value*0.0254 ;
-            lengthResult.setText(String.valueOf(value));
-        }
-        else if(length1id.getValue().equals("cale") && length2id.getValue().equals("mile")) {
-            value = value*0.000015782828 ;
-            lengthResult.setText(String.valueOf(value));
-        }
-        else
-            lengthResult.setText(String.valueOf(value));
     }
 
     @FXML
@@ -95,34 +95,33 @@ public class ConvertController {
 
     @FXML
     public void convertWeight() {
-        double value = Double.valueOf(textWeight.getText());
+        try {
+            double value = Double.valueOf(textWeight.getText());
 
-        if(weight1id.getValue().equals("kilogramy") && weight2id.getValue().equals("funty")) {
-            value = value*2.20462262;
-            weightResult.setText(String.valueOf(value));
+            if (weight1id.getValue().equals("kilogramy") && weight2id.getValue().equals("funty")) {
+                value = value * 2.20462262;
+                weightResult.setText(String.valueOf(value));
+            } else if (weight1id.getValue().equals("kilogramy") && weight2id.getValue().equals("uncje")) {
+                value = value * 35.2739619;
+                weightResult.setText(String.valueOf(value));
+            } else if (weight1id.getValue().equals("funty") && weight2id.getValue().equals("kilogramy")) {
+                value = value * 0.45359237;
+                weightResult.setText(String.valueOf(value));
+            } else if (weight1id.getValue().equals("funty") && weight2id.getValue().equals("uncje")) {
+                value = value * 16;
+                weightResult.setText(String.valueOf(value));
+            } else if (weight1id.getValue().equals("uncje") && weight2id.getValue().equals("kilogramy")) {
+                value = value * 0.0283495231;
+                weightResult.setText(String.valueOf(value));
+            } else if (weight1id.getValue().equals("uncje") && weight2id.getValue().equals("funty")) {
+                value = value * 0.0625;
+                weightResult.setText(String.valueOf(value));
+            } else
+                weightResult.setText(String.valueOf(value));
         }
-        else if(weight1id.getValue().equals("kilogramy") && weight2id.getValue().equals("uncje")) {
-            value = value*35.2739619;
-            weightResult.setText(String.valueOf(value));
+        catch (NumberFormatException exception) {
+            weightResult.setText("Błąd - wprowadź liczbę");
         }
-        else if(weight1id.getValue().equals("funty") && weight2id.getValue().equals("kilogramy")) {
-            value = value*0.45359237;
-            weightResult.setText(String.valueOf(value));
-        }
-        else if(weight1id.getValue().equals("funty") && weight2id.getValue().equals("uncje")) {
-            value = value*16;
-            weightResult.setText(String.valueOf(value));
-        }
-        else if(weight1id.getValue().equals("uncje") && weight2id.getValue().equals("kilogramy")) {
-            value = value*0.0283495231;
-            weightResult.setText(String.valueOf(value));
-        }
-        else if(weight1id.getValue().equals("uncje") && weight2id.getValue().equals("funty")) {
-            value = value*0.0625;
-            weightResult.setText(String.valueOf(value));
-        }
-        else
-            weightResult.setText(String.valueOf(value));
     }
 
     @FXML
@@ -145,34 +144,35 @@ public class ConvertController {
 
     @FXML
     public void convertTemperature() {
-        double value = Double.valueOf(textTemperature.getText());
 
-        if(temperature1id.getValue().equals("stopnie Celcjusza") && temperature2id.getValue().equals("stopnie Fahrenheita")) {
-            value = 1.8*value + 32;
-            temperatureResult.setText(String.valueOf(value));
+        try {
+            double value = Double.valueOf(textTemperature.getText());
+
+            if (temperature1id.getValue().equals("stopnie Celcjusza") && temperature2id.getValue().equals("stopnie Fahrenheita")) {
+                value = 1.8 * value + 32;
+                temperatureResult.setText(String.valueOf(value));
+            } else if (temperature1id.getValue().equals("stopnie Celcjusza") && temperature2id.getValue().equals("stopnie Kelwina")) {
+                value = value + 273.15;
+                temperatureResult.setText(String.valueOf(value));
+            } else if (temperature1id.getValue().equals("stopnie Fahrenheita") && temperature2id.getValue().equals("stopnie Celcjusza")) {
+                value = (value - 32) / 1.8;
+                temperatureResult.setText(String.valueOf(value));
+            } else if (temperature1id.getValue().equals("stopnie Fahrenheita") && temperature2id.getValue().equals("stopnie Kelwina")) {
+                value = (value - 32) / 1.8 + 273.15;
+                temperatureResult.setText(String.valueOf(value));
+            } else if (temperature1id.getValue().equals("stopnie Kelwina") && temperature2id.getValue().equals("stopnie Celcjusza")) {
+                value = value - 273.15;
+                temperatureResult.setText(String.valueOf(value));
+            } else if (temperature1id.getValue().equals("stopnie Kelwina") && temperature2id.getValue().equals("stopnie Fahrenheita")) {
+                value = (value - 273.15) * 1.8 + 32;
+                temperatureResult.setText(String.valueOf(value));
+            } else
+                temperatureResult.setText(String.valueOf(value));
         }
-        else if(temperature1id.getValue().equals("stopnie Celcjusza") && temperature2id.getValue().equals("stopnie Kelwina")) {
-            value = value+273.15;
-            temperatureResult.setText(String.valueOf(value));
-        }
-        else if(temperature1id.getValue().equals("stopnie Fahrenheita") && temperature2id.getValue().equals("stopnie Celcjusza")) {
-            value = (value-32)/1.8;
-            temperatureResult.setText(String.valueOf(value));
-        }
-        else if(temperature1id.getValue().equals("stopnie Fahrenheita") && temperature2id.getValue().equals("stopnie Kelwina")) {
-            value = (value-32)/1.8 + 273.15;
-            temperatureResult.setText(String.valueOf(value));
-        }
-        else if(temperature1id.getValue().equals("stopnie Kelwina") && temperature2id.getValue().equals("stopnie Celcjusza")) {
-            value = value-273.15;
-            temperatureResult.setText(String.valueOf(value));
-        }
-        else if(temperature1id.getValue().equals("stopnie Kelwina") && temperature2id.getValue().equals("stopnie Fahrenheita")) {
-            value = (value-273.15)*1.8 + 32;
-            temperatureResult.setText(String.valueOf(value));
-        }
-        else
-            temperatureResult.setText(String.valueOf(value));
+        catch (NumberFormatException exception) {
+            temperatureResult.setText("Błąd - wprowadź liczbę");
+    }
+
     }
 
 }

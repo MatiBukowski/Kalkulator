@@ -18,7 +18,7 @@ public class Main extends Application {
         StackPane stackpane = loader.load();
         Scene scene = new Scene(stackpane, 500, 600);
         stage.setScene(scene);
-        stage.setTitle("Aplikacja");
+        stage.setTitle("Wielofunkcyjna aplikacja");
         stage.show();
 
     }

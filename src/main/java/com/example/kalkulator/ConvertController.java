@@ -171,8 +171,16 @@ public class ConvertController {
         }
         catch (NumberFormatException exception) {
             temperatureResult.setText("Błąd - wprowadź liczbę");
+        }
+
     }
 
+    @FXML
+    public void exchangeLength() {
+        String help =String.valueOf(length1id.getValue());
+        length1id.setValue(length2id.getValue());
+        length2id.setValue(help);
+        convertLength();
     }
 
 }

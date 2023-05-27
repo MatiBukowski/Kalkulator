@@ -10,9 +10,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulator.MenuController">
    <children>
-      <HBox layoutY="187.0" prefHeight="361.0" prefWidth="500.0" spacing="20.0">
+      <HBox layoutY="155.0" prefHeight="218.0" prefWidth="500.0" spacing="20.0">
          <children>
-            <VBox prefHeight="361.0" prefWidth="170.0" spacing="55.0">
+            <VBox prefHeight="361.0" prefWidth="160.0" spacing="55.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#openCalculator" prefHeight="75.0" prefWidth="160.0" style="-fx-background-color: #B8E2F2; -fx-background-radius: 5; -fx-border-color: gray; -fx-border-radius: 5;" text="Kalkulator">
                      <font>
@@ -42,16 +42,10 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#exit" prefHeight="75.0" prefWidth="160.0" style="-fx-background-color: #FF7E82; -fx-background-radius: 5; -fx-border-color: Gray; -fx-border-radius: 5;" text="Wyjście">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
+                  <Button mnemonicParsing="false" onAction="#openNotebook" prefHeight="75.0" prefWidth="160.0" style="-fx-border-color: Gray; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #FFBF65;" text="Notatnik">
                      <font>
                         <Font size="18.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                </children>
             </VBox>
@@ -60,5 +54,13 @@
             <Insets left="80.0" right="80.0" />
          </padding>
       </HBox>
+      <Button layoutX="170.0" layoutY="411.0" mnemonicParsing="false" onAction="#exit" prefHeight="75.0" prefWidth="160.0" style="-fx-background-color: #FF7E82; -fx-background-radius: 5; -fx-border-color: Gray; -fx-border-radius: 5;" text="Wyjście">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

@@ -14,7 +14,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulator.NotebookController">
    <children>
       <Button layoutX="417.0" layoutY="546.0" mnemonicParsing="false" onAction="#exitNotebook" style="-fx-background-color: #FF7E82;" text="Wyjście" />
-      <ChoiceBox fx:id="choiceNote" layoutX="63.0" layoutY="82.0" onMouseDragEntered="#choiceMouseEntered" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceNote" layoutX="63.0" layoutY="82.0" onMouseEntered="#choiceMouseEntered" prefWidth="150.0" />
       <TextArea fx:id="textNote" layoutX="41.0" layoutY="208.0" prefHeight="286.0" prefWidth="419.0" />
       <Button layoutX="63.0" layoutY="508.0" mnemonicParsing="false" onAction="#saveNote" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #99C68E;" text="Zapisz" />
       <Button layoutX="347.0" layoutY="80.0" mnemonicParsing="false" onAction="#deleteNote" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #FAEBD7; -fx-background-radius: 3; -fx-border-color: #FFE4C4; -fx-border-radius: 3;" text="Usuń" />

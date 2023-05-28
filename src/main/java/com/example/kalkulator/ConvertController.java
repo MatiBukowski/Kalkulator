@@ -177,10 +177,26 @@ public class ConvertController {
 
     @FXML
     public void exchangeLength() {
-        String help =String.valueOf(length1id.getValue());
+        String help = String.valueOf(length1id.getValue());
         length1id.setValue(length2id.getValue());
         length2id.setValue(help);
         convertLength();
+    }
+
+    @FXML
+    public void exchangeWeight() {
+        String help = String.valueOf(weight1id.getValue());
+        weight1id.setValue(weight2id.getValue());
+        weight2id.setValue(help);
+        convertWeight();
+    }
+
+    @FXML
+    public void exchangeTemperature() {
+        String help = String.valueOf(temperature1id.getValue());
+        temperature1id.setValue(temperature2id.getValue());
+        temperature2id.setValue(help);
+        convertTemperature();
     }
 
 }
